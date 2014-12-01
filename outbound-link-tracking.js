@@ -4,12 +4,12 @@ $( document ).on( 'ready', function() {
 	outbound_links();
 	
 	// after ajax requests
-	jQuery( document ).ajaxComplete(function() {
+	$( document ).ajaxComplete(function() {
     	setTimeout( outbound_links, 3000 );
 	});
 	
 	// track outbound links
-	$( '.external-link' ).on( 'click', function( e ) {
+	$( document ).on( 'click', '.external-link', function( evt ) {
 		var _gaq = _gaq || [];
 		_gaq.push( [ '_trackEvent', 'Outbound Link', this.href ] ); 
 	});
@@ -18,5 +18,5 @@ $( document ).on( 'ready', function() {
 function outbound_links() {
 	$( 'a' ).not( '.no-track, .internal' ).filter(function() {
 		return this.hostname && this.hostname !== location.hostname;
-	}).attr( 'target', '_blank' ).addClass( 'external-link' );	
+	}).attr( 'target', '_blank' ).addClass( 'external-link' );
 }
