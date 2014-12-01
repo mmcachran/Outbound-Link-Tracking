@@ -9,7 +9,7 @@ $( document ).on( 'ready', function() {
 	});
 	
 	// track outbound links
-	$( document ).on( 'click', '.external-link', function( evt ) {
+	$( document ).on( 'click', '.external-link', function( e ) {
 		var _gaq = _gaq || [];
 		_gaq.push( [ '_trackEvent', 'Outbound Link', this.href ] ); 
 	});
