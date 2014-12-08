@@ -62,6 +62,11 @@ class Outbound_Link_Tracking {
 		load_plugin_textdomain( 'outbound_link_tracking', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 	
+	/**
+	 * Add Outbound Link Tracking JS to wp_head()
+	 * @since  0.1.0
+	 * @return null
+	 */
 	public function do_outbound_link_tracking() {
 		wp_enqueue_script( 'outbound-link-tracking', plugins_url( '/outbound-link-tracking.js', __FILE__ ), array( 'jquery' ) );
 	}
